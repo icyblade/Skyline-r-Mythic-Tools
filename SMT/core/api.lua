@@ -63,7 +63,7 @@ end
 T.GetIconLink = function(spellID)
 	if not GetSpellInfo(spellID) then
 		print(spellID.."出错 请检查")
-		return ""
+		return spellID.."出错"
 	end
 	local icon = select(3, GetSpellInfo(spellID))
 	return "|T"..icon..":12:12:0:0:64:64:4:60:4:60|t"..GetSpellLink(spellID)

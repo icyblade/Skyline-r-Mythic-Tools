@@ -50,12 +50,32 @@ local Character_default_Settings = {
 		enable = true,
 		icon_size = 40,
 		icon_space = 4,
-		icon_num = 4,
 		grow_dir = "RIGHT",
 		hide_in_raid = true,
 		x = 5,
 		y = 0,
 		alpha = 20,
+	},
+	
+	typeToTrack = {
+		INTERRUPT = true,
+		HARDCC = true,
+		SOFTCC = true,
+		STHARDCC = true,
+		STSOFTCC = true,
+		DISPEL = true,
+		DEFMDISPEL = true,
+		EXTERNAL = true,
+		HEALING = true,
+		UTILITY = true,
+		PERSONAL = true,
+		IMMUNITY = true,
+		DAMAGE = true,
+		TANK = true,
+	},
+	
+	spellToTrack = {
+	
 	},
 	
 	Icons = {

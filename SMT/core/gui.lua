@@ -85,6 +85,7 @@ local createcheckbutton = function(parent, x, y, name, t1, t2, value)
 	
 	return bu
 end
+T.createcheckbutton = createcheckbutton
 
 local function TestSlider_OnValueChanged(self, value)
    if not self._onsetting then   -- is single threaded 
@@ -554,7 +555,6 @@ T.Create_ChatMsg_Options = function(parent, v, t)
 	table.insert(parent.options, bu)
 end
 
-
 local scanTooltip = CreateFrame("GameTooltip", "NPCNameToolTip", nil, "GameTooltipTemplate") --fake tooltipframe used for reading localized npc names -- by lunaic
 
 local function GetNameFromNpcID(npcID)
@@ -888,35 +888,36 @@ end
 CreateAffixTextOptions("Quaking", 14, 40, -720)
 CreateAffixTextOptions("Explosive", 13, 240, -720)
 
-T.CreateTitle(options.sfa, L["小队减伤CD"], -750)
+local CD_options = T.CreateOptions(L["小队减伤CD"], gui, true)
+gui.CD_options = CD_options
 
-options.CD_Icons_enable = createcheckbutton(options.sfa, 40, -780, L["启用"], "CD_Icons", false, "enable")
-options.CD_Icons_enable.apply = function() T.EditCDBar("show") end
+T.CreateTitle(CD_options.sfa, L["小队减伤CD"], -20)
 
-options.CD_Icons_hideinraid = createcheckbutton(options.sfa, 130, -780, L["在团队中隐藏"], "CD_Icons", false, "hide_in_raid")
-options.CD_Icons_hideinraid.apply = function() T.EditCDBar("show") end
+CD_options.CD_Icons_enable = createcheckbutton(CD_options.sfa, 40, -50, L["启用"], "CD_Icons", false, "enable")
+CD_options.CD_Icons_enable.apply = function() T.EditCDBar("show") end
 
-options.CD_Icons_grow_dir = createradiobuttongroup(options.sfa, 300, -786, L["排列方向"], "CD_Icons", false, "grow_dir", growdirection_group)
-options.CD_Icons_grow_dir.apply = function() T.EditCDBar("pos") end
+CD_options.CD_Icons_hideinraid = createcheckbutton(CD_options.sfa, 130, -50, L["在团队中隐藏"], "CD_Icons", false, "hide_in_raid")
+CD_options.CD_Icons_hideinraid.apply = function() T.EditCDBar("show") end
 
-options.CD_Icons_size = createslider(options.sfa, 60, -820, L["图标大小"], "CD_Icons", false, "icon_size", 20, 60, 1)
-options.CD_Icons_size.apply = function() T.EditCDBar("size") end
+CD_options.CD_Icons_grow_dir = createradiobuttongroup(CD_options.sfa, 300, -56, L["排列方向"], "CD_Icons", false, "grow_dir", growdirection_group)
+CD_options.CD_Icons_grow_dir.apply = function() T.EditCDBar("pos") end
 
-options.CD_Icons_space = createslider(options.sfa, 270, -820, L["图标间距"], "CD_Icons", false, "icon_space", 0, 10, 1)
-options.CD_Icons_space.apply = function() T.EditCDBar("pos") end
+CD_options.CD_Icons_size = createslider(CD_options.sfa, 60, -90, L["图标大小"], "CD_Icons", false, "icon_size", 20, 60, 1)
+CD_options.CD_Icons_size.apply = function() T.EditCDBar("size") end
 
-options.CD_Icons_num = createslider(options.sfa, 480, -820, L["图标数量"], "CD_Icons", false, "icon_num", 1, 6, 1)
-options.CD_Icons_num.apply = function() T.EditCDBar("pos") end
+CD_options.CD_Icons_space = createslider(CD_options.sfa, 270, -90, L["图标间距"], "CD_Icons", false, "icon_space", 0, 10, 1)
+CD_options.CD_Icons_space.apply = function() T.EditCDBar("pos") end
 
-options.CD_Icons_x = createslider(options.sfa, 60, -860, L["水平位置偏移"], "CD_Icons", false, "x", -20, 20, 1)
-options.CD_Icons_x.apply = function() T.EditCDBar("pos") end
+CD_options.CD_Icons_x = createslider(CD_options.sfa, 60, -130, L["水平位置偏移"], "CD_Icons", false, "x", -20, 20, 1)
+CD_options.CD_Icons_x.apply = function() T.EditCDBar("pos") end
 
-options.CD_Icons_y = createslider(options.sfa, 270, -860, L["垂直位置偏移"], "CD_Icons", false, "y", -20, 20, 1)
-options.CD_Icons_y.apply = function() T.EditCDBar("pos") end
+CD_options.CD_Icons_y = createslider(CD_options.sfa, 270, -130, L["垂直位置偏移"], "CD_Icons", false, "y", -20, 20, 1)
+CD_options.CD_Icons_y.apply = function() T.EditCDBar("pos") end
 
-options.CD_Icons_alpha = createslider(options.sfa, 480, -860, L["冷却中图标透明度"], "CD_Icons", false, "alpha", 0, 100, 5)
-options.CD_Icons_alpha.apply = function() T.EditCDBar("alpha") end
+CD_options.CD_Icons_alpha = createslider(CD_options.sfa, 480, -130, L["冷却中图标透明度"], "CD_Icons", false, "alpha", 0, 100, 5)
+CD_options.CD_Icons_alpha.apply = function() T.EditCDBar("alpha") end
 
+T.CreateTitle(CD_options.sfa, L["减伤类型"], -170)
 ----------------------------------------------------------
 --------------------[[     CMD     ]]---------------------
 ----------------------------------------------------------
