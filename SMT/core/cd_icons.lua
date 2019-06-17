@@ -940,18 +940,18 @@ local function CreateCDBar(unit)
 					end
 				elseif SMT_CDB["CD_Icons"]["grow_dir"] == "TOP" then
 					if line == 1 then
-						f.icons[i]:SetPoint("BTTOMLEFT", f, "TOPLEFT", 0, (f.line_num_top-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
+						f.icons[i]:SetPoint("BOTTOMLEFT", f, "TOPLEFT", 0, (f.line_num_top-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
 						f.line_num_top = f.line_num_top + 1
 					else
-						f.icons[i]:SetPoint("BTTOMLEFT", f, "TOPLEFT", SMT_CDB["CD_Icons"]["icon_size"]-SMT_CDB["CD_Icons"]["icon_space"], (f.line_num_buttom-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
+						f.icons[i]:SetPoint("BOTTOMLEFT", f, "TOPLEFT", SMT_CDB["CD_Icons"]["icon_size"]-SMT_CDB["CD_Icons"]["icon_space"], (f.line_num_buttom-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
 						f.line_num_buttom = f.line_num_buttom + 1
 					end
 				elseif SMT_CDB["CD_Icons"]["grow_dir"] == "BOTTOM" then
 					if line == 1 then
-						f.icons[i]:SetPoint("TOPLEFT", f, "BTTOMLEFT", 0, -(f.line_num_top-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
+						f.icons[i]:SetPoint("TOPLEFT", f, "BOTTOMLEFT", 0, -(f.line_num_top-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
 						f.line_num_top = f.line_num_top + 1
 					else
-						f.icons[i]:SetPoint("TOPLEFT", f, "BTTOMLEFT", SMT_CDB["CD_Icons"]["icon_size"]-SMT_CDB["CD_Icons"]["icon_space"], -(f.line_num_buttom-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
+						f.icons[i]:SetPoint("TOPLEFT", f, "BOTTOMLEFT", SMT_CDB["CD_Icons"]["icon_size"]-SMT_CDB["CD_Icons"]["icon_space"], -(f.line_num_buttom-1)*(SMT_CDB["CD_Icons"]["icon_size"]+SMT_CDB["CD_Icons"]["icon_space"]))
 						f.line_num_buttom = f.line_num_buttom + 1
 					end
 				end
