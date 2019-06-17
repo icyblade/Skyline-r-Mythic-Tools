@@ -908,10 +908,10 @@ CD_options.CD_Icons_size.apply = function() T.EditCDBar("size") end
 CD_options.CD_Icons_space = createslider(CD_options.sfa, 270, -90, L["图标间距"], "CD_Icons", false, "icon_space", 0, 10, 1)
 CD_options.CD_Icons_space.apply = function() T.EditCDBar("pos") end
 
-CD_options.CD_Icons_x = createslider(CD_options.sfa, 60, -130, L["水平位置偏移"], "CD_Icons", false, "x", -20, 20, 1)
+CD_options.CD_Icons_x = createslider(CD_options.sfa, 60, -130, L["水平位置偏移"], "CD_Icons", false, "x", -100, 100, 1)
 CD_options.CD_Icons_x.apply = function() T.EditCDBar("pos") end
 
-CD_options.CD_Icons_y = createslider(CD_options.sfa, 270, -130, L["垂直位置偏移"], "CD_Icons", false, "y", -20, 20, 1)
+CD_options.CD_Icons_y = createslider(CD_options.sfa, 270, -130, L["垂直位置偏移"], "CD_Icons", false, "y", -100, 100, 1)
 CD_options.CD_Icons_y.apply = function() T.EditCDBar("pos") end
 
 CD_options.CD_Icons_alpha = createslider(CD_options.sfa, 480, -130, L["冷却中图标透明度"], "CD_Icons", false, "alpha", 0, 100, 5)
